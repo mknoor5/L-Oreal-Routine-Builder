@@ -81,6 +81,21 @@ body {
   margin-bottom: 20px;
 }
 
+.chat-msg.user {
+  text-align: right;
+  background: #e8f0ff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.chat-msg.assistant {
+  text-align: left;
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
 /* placeholder message */
 .placeholder-message {
   width: 100%;
@@ -186,6 +201,8 @@ body {
   display: flex;
   gap: 15px;
   min-height: 160px;
+  cursor: pointer;
+  position: relative;
 }
 
 .product-card img {
@@ -193,6 +210,47 @@ body {
   height: 110px;
   object-fit: contain;
   flex-shrink: 0;
+}
+
+.product-card.selected {
+  border-color: #0066cc;
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.12);
+}
+
+.product-card .select-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #0066cc;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.product-card .description {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #444;
+  display: none;
+}
+
+.product-card.expanded .description {
+  display: block;
+}
+
+.desc-toggle {
+  margin-top: 6px;
+  background: transparent;
+  border: none;
+  color: #0066cc;
+  cursor: pointer;
+  padding: 0;
+  font-size: 13px;
 }
 
 .product-card .product-info {
@@ -230,6 +288,35 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.selected-item {
+  background: #f4f7fb;
+  border: 1px solid #d6e6fb;
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.selected-item button {
+  background: transparent;
+  border: none;
+  color: #0066cc;
+  cursor: pointer;
+}
+.selected-controls {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.clear-btn {
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .generate-btn {
