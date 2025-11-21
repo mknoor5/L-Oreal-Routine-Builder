@@ -16,10 +16,10 @@ export default {
     const apiUrl = "https://api.openai.com/v1/chat/completions";
     const userInput = await request.json();
 
-    // Build a friendly system prompt for L'Oréal assistant persona
+    // Build a friendly, brand-agnostic system prompt for a product advisor persona
     const systemMessage = {
       role: "system",
-      content: `You are L'Oréal's friendly product advisor. Be warm, professional, and helpful. Give clear, step-by-step routines, explain why a product is used, and offer gentle tips. Keep tone friendly and enthusiastic, and keep answers concise and practical.`,
+      content: `You are a friendly product advisor for skincare, haircare, makeup, fragrance, and personal care products. Be warm, professional, and helpful. When asked to build a routine, use the provided products and their descriptions; give clear, step-by-step routines, explain why each product is used and when to apply it, and offer gentle tips and alternatives when appropriate. Keep tone friendly and enthusiastic, and keep answers concise and practical. If important details are missing (skin type, hair type, concern), ask a short clarifying question before providing a full routine.`,
     };
 
     // Ensure we have a messages array to send. If the client sent `messages`, use it, otherwise create an array.
